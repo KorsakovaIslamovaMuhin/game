@@ -1,14 +1,14 @@
 // Зарегистрировать обработчик приложения для возможности его рабты без подключения к сети.
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/game/sw.js')
+    .register('/game/js/sw.js')
     .then(() => { console.log('Обработчик приложения зарегистрирован'); });
 }
 
 // Код управления установкой приложения на компьютер.
 let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
-addBtn.style.display = 'none';
+addBtn.style.display = 'block';
 
 window.addEventListener('beforeinstallprompt', (e) => {
   // Предотвратить отображение приглашения в Chrome 67 и ниже.
